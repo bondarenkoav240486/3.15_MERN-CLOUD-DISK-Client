@@ -4,7 +4,7 @@ import {addUploadFile, changeUploadFile, showUploader} from "../reducers/uploadR
 import {hideLoader, showLoader} from "../reducers/appReducer";
 import {API_URL} from "../config";
 
-import {addFile, deleteFileAction, setFiles} from "../reducers/fileReducer";
+import {logout} from "../reducers/userReducer";
 
 
 export function getFiles(dirId, sort) {
@@ -110,6 +110,7 @@ export function deleteFile(file) {
             alert(response.data.message)
         } catch (e) {
             alert(e?.response?.data?.message)
+            dispatch(logout())
         }
     }
 }
