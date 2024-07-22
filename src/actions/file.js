@@ -4,6 +4,9 @@ import {addUploadFile, changeUploadFile, showUploader} from "../reducers/uploadR
 import {hideLoader, showLoader} from "../reducers/appReducer";
 import {API_URL} from "../config";
 
+import {addFile, deleteFileAction, setFiles} from "../reducers/fileReducer";
+
+
 export function getFiles(dirId, sort) {
     return async dispatch => {
         try {
