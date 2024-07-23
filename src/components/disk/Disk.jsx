@@ -15,8 +15,11 @@ const Disk = () => {
     const [dragEnter, setDragEnter] = useState(false)
     const [sort, setSort] = useState('type')
 
+    localStorage.getItem('token')
+
     useEffect(() => {
         dispatch(getFiles(currentDir, sort))
+        debugger
     }, [currentDir, sort])
 
     function showPopupHandler() {

@@ -1,10 +1,10 @@
-import axios from 'axios'
+// import axios from 'axios'
 import {addFile, deleteFileAction, setFiles} from "../reducers/fileReducer";
 import {addUploadFile, changeUploadFile, showUploader} from "../reducers/uploadReducer";
 import {hideLoader, showLoader} from "../reducers/appReducer";
 import {API_URL} from "../config";
 
-import {logout} from "../reducers/userReducer";
+import axios from '../axiosConfig';
 
 
 export function getFiles(dirId, sort) {
@@ -21,12 +21,14 @@ export function getFiles(dirId, sort) {
             if (dirId && sort) {
                 url = `${API_URL}api/files?parent=${dirId}&sort=${sort}`
             }
+            localStorage.getItem('token')
+            debugger
             const response = await axios.get(url, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
             dispatch(setFiles(response.data))
         } catch (e) {
-            alert(e.response.data.message)
+            alert(e.response.data.message+'29 get Files')
         } finally {
             dispatch(hideLoader())
         }
@@ -110,7 +112,6 @@ export function deleteFile(file) {
             alert(response.data.message)
         } catch (e) {
             alert(e?.response?.data?.message)
-            dispatch(logout())
         }
     }
 }
@@ -131,3 +132,5 @@ export function searchFiles(search) {
         }
     }
 }
+
+

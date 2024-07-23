@@ -15,7 +15,9 @@ function App() {
 
     useEffect(() => {
         dispatch(auth())
+        debugger
     }, [])
+    console.log(isAuth)
 
 
     return (
