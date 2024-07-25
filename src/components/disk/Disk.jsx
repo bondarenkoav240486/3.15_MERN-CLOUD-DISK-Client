@@ -1,26 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { createDir, getFiles, uploadFile } from "../../actions/file";
+// import { createDir, getFiles, uploadFile } from "../../actions/file";
+import { createDir, getFiles, uploadFile, getCurrentDirPath } from "../../actions/file";
 import FileList from "./fileList/FileList";
 import './disk.css'
 import Popup from "./Popup";
 import { setCurrentDir, setFileView, setPopupDisplay } from "../../reducers/fileReducer";
 import Uploader from "./uploader/Uploader";
 
+import axios from 'axios';  // Додано для нових запитів
+
+
 const Disk = () => {
     const dispatch = useDispatch()
     const currentDir = useSelector(state => state.files.currentDir)
+    // currentDirtPath
+    const currentDirtPath = useSelector(state => state.files.currentDirtPath)
     const loader = useSelector(state => state.app.loader)
     const dirStack = useSelector(state => state.files.dirStack)
     const [dragEnter, setDragEnter] = useState(false)
     const [sort, setSort] = useState('type')
 
+    const [currentDirPath, setCurrentDirPath] = useState('');  // Додано для зберігання шляху
+
+
     localStorage.getItem('token')
 
+    debugger
+
+    // useEffect(() => {
+    //     dispatch(getFiles(currentDir, sort))
+    // }, [currentDir, sort])
+
     useEffect(() => {
-        dispatch(getFiles(currentDir, sort))
-        debugger
-    }, [currentDir, sort])
+        dispatch(getFiles(currentDir, sort));
+        dispatch(getCurrentDirPath(currentDir));
+    }, [currentDir, sort, dispatch]);
 
     function showPopupHandler() {
         dispatch(setPopupDisplay('flex'))
@@ -56,8 +71,8 @@ const Disk = () => {
         setDragEnter(false)
     }
 
-    if(loader) {
-    // if (true) {
+    if (loader) {
+        // if (true) {
         return (
             <div className="loader">
                 {/* <div className="lds-dual-ring"></div> */}
@@ -85,6 +100,9 @@ const Disk = () => {
                 <button className="disk__plate" onClick={() => dispatch(setFileView('plate'))} />
                 <button className="disk__list" onClick={() => dispatch(setFileView('list'))} />
             </div>
+
+            <div className="current-dir-path">Поточна директорія: {currentDirtPath}</div> {/* Виведення шляху */}
+
             <FileList />
             <Popup />
             <Uploader />

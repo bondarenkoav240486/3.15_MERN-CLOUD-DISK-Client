@@ -1,4 +1,6 @@
-import axios from 'axios'
+// import axios from 'axios'
+import axios from '../axiosConfig';
+
 import {setUser} from "../reducers/userReducer";
 import {API_URL} from "../config";
 
@@ -25,7 +27,6 @@ export   const  login =   (email, password) => {
             localStorage.setItem('token', response.data.token)
             dispatch(setUser(response.data.user))
 
-            debugger
         } catch (e) {
             alert(e.response.data.message)
         }
@@ -44,7 +45,6 @@ export const auth =  () => {
             console.log(response.data)
         } catch (e) {
             localStorage.removeItem('token')
-            debugger
         }
     }
 }

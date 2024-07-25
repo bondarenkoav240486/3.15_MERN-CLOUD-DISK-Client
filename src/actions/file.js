@@ -4,7 +4,12 @@ import {addUploadFile, changeUploadFile, showUploader} from "../reducers/uploadR
 import {hideLoader, showLoader} from "../reducers/appReducer";
 import {API_URL} from "../config";
 
+import { setCurrentDirPath } from "../reducers/fileReducer"; // Переконайтеся, що імпорт правильний
+
+
 import axios from '../axiosConfig';
+
+
 
 
 export function getFiles(dirId, sort) {
@@ -22,7 +27,6 @@ export function getFiles(dirId, sort) {
                 url = `${API_URL}api/files?parent=${dirId}&sort=${sort}`
             }
             localStorage.getItem('token')
-            debugger
             const response = await axios.get(url, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
@@ -129,6 +133,24 @@ export function searchFiles(search) {
             alert(e?.response?.data?.message)
         } finally {
             dispatch(hideLoader())
+        }
+    }
+}
+
+// Додана нова функція для отримання шляху поточної директорії
+
+// Додана нова функція для отримання шляху поточної директорії
+export function getCurrentDirPath(parentId) {
+    return async dispatch => {
+        try {
+            const response = await axios.get(`${API_URL}api/files/currentDirPath?parent=${parentId}`, {
+                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+            });
+            debugger
+            dispatch(setCurrentDirPath(response.data.path)); // Збереження шляху в стані
+            // return response.data.path;  // Можливо, вам потрібно передати цей шлях в компонент
+        } catch (e) {
+            alert(e?.response?.data?.message)
         }
     }
 }

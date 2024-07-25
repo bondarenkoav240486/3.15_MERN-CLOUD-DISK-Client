@@ -1,3 +1,6 @@
+import { resetState } from './fileReducer'; // Імпортуємо resetState
+
+
 const SET_USER = "SET_USER"
 const LOGOUT = "LOGOUT"
 
@@ -28,4 +31,8 @@ export default function userReducer(state = defaultState, action) {
 
 
 export const setUser = user => ({type: SET_USER, payload: user})
-export const logout = () => ({type: LOGOUT})
+// export const logout = () => ({type: LOGOUT})
+export const logout = () => (dispatch) => {
+    dispatch({type: LOGOUT});
+    dispatch(resetState()); // Додаємо скидання стану файлів при логауті
+};
