@@ -11,7 +11,8 @@ import { logout } from './reducers/userReducer'; // Екшен для логау
 
 const instance = axios.create({
 //   baseURL: 'http://localhost:5000/api', // Змініть на ваш базовий URL
-  baseURL: 'http://localhost:5000/', // Змініть на ваш базовий URL
+  // baseURL: 'http://localhost:5000/', // Змініть на ваш базовий URL
+  baseURL: 'http://localhost:5315/', // Змініть на ваш базовий URL
 });
 
 // Додаємо інтерсептор для відповідей
