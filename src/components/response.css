@@ -1,0 +1,79 @@
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    html {
+        /* font-size: 95%; */
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        /* font-size: 85%; */
+        font-size: 95%;
+
+    }
+}
+
+@media (max-width: 510px) {
+    html {
+        /* font-size: 75%; */
+        font-size: 85%;
+
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .navbar__header {
+        /* margin-right: auto; */
+        /* font-size: 1.5rem; */
+        /* font-weight: 500; */
+    }
+
+    .navbar__search {
+        /* order: 10; */
+        /* margin-left: 0; */
+
+        /* width: 12.5rem; */
+        /* margin-left: 2rem; */
+        /* margin-left: auto; */
+        /* margin-left: 50%; */
+    }
+}
+
+@media (max-width: 425px) {
+    html {
+        /* font-size: 60%; */
+        font-size: 75%;
+
+    }
+    .navbar__search {
+        order: 10;
+        /* margin-left: 0; */
+
+        width: 100%;
+        /* margin-left: 2rem; */
+        /* margin-left: auto; */
+        /* margin-left: 50%; */
+    }
+    .navbar__login {
+        margin-left: auto;
+        /* margin-right: 1.5rem; */
+        /* cursor: pointer; */
+        /* margin-left: 2rem; */
+      }
+
+      .file-plate {
+        /* width: 150px; */
+        /* min-width: 14.285%; */
+        width: 5rem;
+        /* height: 150px; */
+        /* cursor: pointer; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* font-size: 0.8rem; */
+        /* margin-top: 1rem; */
+        /* margin-bottom: 1rem; */
+    }
+}

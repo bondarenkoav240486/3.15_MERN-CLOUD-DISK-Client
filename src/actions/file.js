@@ -146,7 +146,6 @@ export function getCurrentDirPath(parentId) {
             const response = await axios.get(`${API_URL}api/files/currentDirPath?parent=${parentId}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
-            debugger
             dispatch(setCurrentDirPath(response.data.path)); // Збереження шляху в стані
             // return response.data.path;  // Можливо, вам потрібно передати цей шлях в компонент
         } catch (e) {

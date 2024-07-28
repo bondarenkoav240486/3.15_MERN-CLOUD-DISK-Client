@@ -1,32 +1,67 @@
 .navbar {
   display: flex;
-  height: 50px;
+  /* height: 50px; */
   justify-content: center;
-  background-color: white;
+  /* background-color: white; */
   width: 100%;
 }
+
+.navbar__logo {
+  font-size: 2.3rem !important;
+}
+
 .navbar__header {
-  margin-left: 10px;
-  font-size: 24px;
-  font-weight: 700;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
+
 .navbar__login {
-  margin-left: auto;
-  margin-right: 20px;
+  /* margin-left: auto; */
+  margin-right: 1.5rem;
   cursor: pointer;
+  margin-left: 2rem;
 }
+
+.navbar__login.isauth_false {
+  margin-left: auto;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__login.isauth_false a,
+.navbar__registration a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .navbar__search {
-  width: 200px;
-  margin-left: 30px;
+  width: 12.5rem;
+  /* margin-left: 2rem; */
+  margin-left: auto;
+  /* margin-left: 50%; */
 }
+
+.navbar__search::placeholder {
+  color: white;
+  /* Змінює колір плейсхолдера на білий */
+}
+
 .navbar__avatar {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
+  color: aliceblue;
 }
+
 .container {
-  width: 1140px;
-  display: flex;
-  align-items: center;
+  /* min-width: 70rem; */
+  /* width: 70%; */
+  /* max-width: 1140px; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
+
 /*# sourceMappingURL=navbar.css.map */

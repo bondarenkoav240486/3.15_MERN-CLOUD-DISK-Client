@@ -1,57 +1,126 @@
 .file {
   margin: 10px 0;
   border-bottom: solid 2px #566885;
+  border-bottom: solid 2px #0D93CD;
+  border-bottom: solid 2px #0d93cd26;
+  /* solid 2px #0d93cd26 */
+  /* #0D93CD */
+
   display: grid;
-  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  /* grid-template-columns: 1fr 4fr repeat(4, 1fr); */
+  /* grid-template-columns: 1fr 4fr repeat(5, 1fr); Збільшення кількості стовпців для додавання нової кнопки */
+  grid-template-columns: 1fr 4fr repeat(4, 1fr) 0.5fr; /* Зміна розміру останнього стовпчика */
+
+
   align-items: center;
+  font-size: 0.8rem
 }
+
 .file:hover {
   transform: scale(1.02);
 }
+
 .file__img {
   justify-self: center;
 }
+
+.file__icion {
+  font-size: 3.0rem !important;
+  color: #0d93cd83;
+}
+
 .file__date {
   grid-column-start: 5;
   justify-self: center;
 }
+
 .file__size {
   grid-column-start: 6;
   justify-self: center;
 }
+
 .file__btn {
   display: none;
 }
-.file:hover .file__date {
+
+/* .file:hover .file__date {
   grid-column-start: 3;
-}
-.file:hover .file__size {
+} */
+
+/* .file:hover .file__size {
   grid-column-start: 4;
-}
-.file:hover .file__download {
+} */
+
+/* .file:hover .file__download,
+.file-plate__btn.file-plate__download 
+  {
   grid-column-start: 5;
   display: block;
-}
-.file:hover .file__delete {
+  background: #21cf69;
+  padding: 0.4rem 0.25rem;
+  border: none;
+  color: white;
+  margin-left: 0.3rem;
+  border-radius: 4px;
+} */
+
+
+/* .file:hover .file__delete ,
+.file-plate__btn.file-plate__delete
+{
   grid-column-start: 6;
   display: block;
+  background: #FF0101;
+  padding: 0.4rem 0.25rem;
+  border: none;
+  color: white;
+  margin-left: 0.3rem;
+  border-radius: 4px;
+} */
+
+/* Додавання стилів для кнопки "три точки" */
+.file__more {
+  justify-self: center;
 }
+
 .file-plate {
-  width: 150px;
-  height: 150px;
+  /* width: 150px; */
+  min-width: 14.285%;
+  max-width: 25%;
+  width: 7rem;
+  /* height: 150px; */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  /* margin-bottom: 1rem; */
 }
+
 .file-plate__img {
   height: 100px;
   width: 100px;
 }
+
 .file-plate__btns {
   display: none;
 }
+
 .file-plate:hover .file-plate__btns {
   display: flex;
 }
+
 /*# sourceMappingURL=file.css.map */
+
+/* .file-plate:hover */
+.file-plate__btn.file-plate__download {
+  grid-column-start: 5;
+  display: block;
+  background: #21cf69;
+  padding: 0.4rem 0.25rem;
+  border: none;
+  color: white;
+  margin-left: 0.3rem;
+  border-radius: 4px;
+}

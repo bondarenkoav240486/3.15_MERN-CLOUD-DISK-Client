@@ -2,22 +2,66 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #566885;
+  font-family: Arial, Helvetica, sans-serif;
+  /* color: #566885; */
 }
 body {
-  background-color: #E9E6E6;
+  /* background-color: #E9E6E6; */
+  /* background-color: #144861; */
+  /* background-color: #0c93cd0c; */
+  /* background-color: hsla(0, 0%, 100%, 0.047); */
+  color: #0E475F;
+
 }
 #root {
-  width: 100%;
+  /* width: 100%; */
 }
+
+.container {
+  /* min-width: 70%; */
+  /* width: 70%; */
+  /* max-width: 1140px; */
+  /* width: 1140px; */
+  /* max-width: 70rem; */
+  max-width: 900px;
+  width: 100%; /* Адаптивність */
+
+  /* min-width: 60rem; */
+
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .wrap {
-  width: 1140px;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  padding: 0.6rem 1.2rem;
 }
 /*# sourceMappingURL=app.css.map */
+
+.navbar {
+  /* display: flex; */
+  /* height: 50px; */
+  /* justify-content: center; */
+  background-color: #0c93cdfd;
+  /* background-color: #134960b9; */
+  /* #134960 */
+  color: aliceblue;
+  /* width: 100%; */
+}
+
+.navbar .container {
+  padding: 0.6rem 1.2rem;
+}
+
+.navbar input{
+  border-bottom: 0.1rem solid #fff;
+}

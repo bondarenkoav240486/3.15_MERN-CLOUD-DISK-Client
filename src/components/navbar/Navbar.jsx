@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './navbar.css'
 import Logo from '../../assets/img/navbar-logo.svg'
-import {NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {logout} from "../../reducers/userReducer";
-import {getFiles, searchFiles} from "../../actions/file";
-import {showLoader} from "../../reducers/appReducer";
+import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../reducers/userReducer";
+import { getFiles, searchFiles } from "../../actions/file";
+import { showLoader } from "../../reducers/appReducer";
 import avatarLogo from '../../assets/img/avatar.svg'
-import {API_URL} from "../../config";
+import { API_URL } from "../../config";
+
+// Імпортуємо іконку хмари з Material-UI
+// import CloudIcon from '@material-ui/icons/Cloud';
+import CloudIcon from '@material-ui/icons/FilterDrama';
 
 const Navbar = () => {
     const isAuth = useSelector(state => state.user.isAuth)
@@ -24,7 +28,7 @@ const Navbar = () => {
             clearTimeout(searchTimeout)
         }
         dispatch(showLoader())
-        if(e.target.value != '') {
+        if (e.target.value != '') {
             setSearchTimeout(setTimeout((value) => {
                 dispatch(searchFiles(value));
             }, 500, e.target.value))
@@ -36,20 +40,26 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="container">
-                <img src={Logo} alt="" className="navbar__logo"/>
-                <div className="navbar__header">MERN CLOUD</div>
-                {isAuth && <input
-                    value={searchName}
-                    onChange={e => searchChangeHandler(e)}
-                    className='navbar__search'
-                    type="text"
-                    placeholder="Название файла..."/>}
-                {!isAuth && <div className="navbar__login"><NavLink to="/login">Войти</NavLink></div> }
-                {!isAuth && <div className="navbar__registration"><NavLink to="/registration">Регистрация</NavLink></div> }
-                {isAuth && <div className="navbar__login" onClick={() => dispatch(logout()) }>Выход</div> }
-                {isAuth && <NavLink to='/profile'>
-                    <img className="navbar__avatar" src={avatar} alt=""/>
-                </NavLink>}
+                {/* <img src={Logo} alt="" className="navbar__logo"/> */}
+                {/* Використовуємо іконку хмари */}
+                <CloudIcon className="navbar__logo"
+                // style={{ fontSize: '3.3rem' }}
+                />
+                <div className="navbar__header">Mern Cloud Disk</div>
+                {/* <div className='wrapper'> */}
+                    {isAuth && <input
+                        value={searchName}
+                        onChange={e => searchChangeHandler(e)}
+                        className='navbar__search'
+                        type="text"
+                        placeholder="Назва файлy..." />}
+                    {!isAuth && <div className="navbar__login isauth_false"><NavLink to="/login">Вхід</NavLink></div>}
+                    {!isAuth && <div className="navbar__registration"><NavLink to="/registration">Регістрація</NavLink></div>}
+                    {isAuth && <div className="navbar__login" onClick={() => dispatch(logout())}>Вихід</div>}
+                    {isAuth && <NavLink to='/profile'>
+                        <img className="navbar__avatar" src={avatar} alt="" />
+                    </NavLink>}
+                {/* </div> */}
             </div>
         </div>
     );

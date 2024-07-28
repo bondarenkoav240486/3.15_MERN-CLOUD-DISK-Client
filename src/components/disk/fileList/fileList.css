@@ -4,6 +4,10 @@
 .filelist__header {
   display: grid;
   grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  /* grid-template-columns: 1fr 7fr repeat(5, 1fr); */
+
+  font-size: 0.95rem 
+
 }
 .filelist__name {
   grid-column-start: 2;
@@ -20,7 +24,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: 20px 0;
+  /* justify-content: space-between; */
+
 }
+
 .file-enter-active {
   animation: file-enter 500ms forwards;
 }
