@@ -23,7 +23,7 @@ body {
   /* max-width: 1140px; */
   /* width: 1140px; */
   /* max-width: 70rem; */
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%; /* Адаптивність */
 
   /* min-width: 60rem; */
@@ -40,9 +40,9 @@ body {
 }
 .wrap {
   width: 100%;
-  max-width: 900px;
-  /* display: flex; */
-  /* flex-direction: column; */
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
   padding: 0.6rem 1.2rem;
 }
 /*# sourceMappingURL=app.css.map */

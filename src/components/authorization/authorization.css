@@ -1,7 +1,11 @@
 .authorization {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  /* width: 500px; */
+  max-width: 500px;
+
+  width: 100%;    
+
   align-items: center;
   background-color: white;
   border-radius: 20px;
@@ -9,16 +13,30 @@
   align-self: center;
   margin-top: 100px;
 }
+
 .authorization__header {
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: 1.9rem;
+
   font-weight: 700;
+  color: #566885;
+
 }
+
 .authorization input {
-  margin: 10px 20px;
+  /* margin: 10px 20px; */
+  margin: 0.65rem 1.25rem;
+  /* 0.65rem 1.25rem; */
+  color: #566885 !important;
+  /* color: #566885; */
+
 }
+
 .authorization__btn {
   border: none;
-  background-color: #566885;
+  /* background-color: #566885; */
+  background-color: rgb(14 155 235 / 74%);
+
   border-radius: 8px;
   color: white;
   font-weight: 700;
@@ -26,4 +44,5 @@
   align-self: flex-end;
   margin-top: 10px;
 }
+
 /*# sourceMappingURL=authorization.css.map */

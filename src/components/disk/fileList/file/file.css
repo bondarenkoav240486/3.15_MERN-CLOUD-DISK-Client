@@ -25,7 +25,8 @@
 }
 
 .file__icion {
-  font-size: 3.0rem !important;
+  /* font-size: 3.0rem !important; */
+  font-size: 3.5rem !important;
   color: #0d93cd83;
 }
 
@@ -85,9 +86,11 @@
 
 .file-plate {
   /* width: 150px; */
-  min-width: 14.285%;
-  max-width: 25%;
-  width: 7rem;
+  width:14.285%;
+  /* width: 14.285% !important; */
+  /* min-width: 14.285%; */
+  /* max-width: 25%; */
+  /* width: 7rem; */
   /* height: 150px; */
   cursor: pointer;
   display: flex;
